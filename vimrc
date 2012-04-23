@@ -119,7 +119,7 @@ set fillchars=vert:\ ,stl:\ ,stlnc:\
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "     CTags设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" http://www.vim.org/scripts/script.php?script_id=273
 " 是否高亮显示当前标签
 let Tlist_Auto_Highlight_Tag = 1
 
@@ -162,7 +162,7 @@ nmap <F3> :Tlist<ENTER>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "      winManager设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
+" http://www.vim.org/scripts/script.php?script_id=95
 " 设置界面分割
 let g:winManagerWindowLayout = "TagList|FileExplorer"
 
@@ -177,6 +177,37 @@ let g:persistentBehaviour=0
 
 " 进入VIM的时候自动打开
 let g:AutoOpenWinManager = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"      MiniBuffer设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" http://www.vim.org/scripts/script.php?script_id=159
+" 允许进行<C-Tab>和<C-S-Tab>进行切换
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplorerMoreThanOne=0    "让minibuffer只出现一个
+
+map <C-Tab> :bn<CR>     "切换Buffer，右切换
+map <S-Tab> :bp<CR>     "切换Buffer，左切换
+
+"<Tab>	向前循环切换到每个buffer名上
+"<S-Tab>	向后循环切换到每个buffer名上
+"<Enter>	在打开光标所在的buffer
+"d	删除光标所在的buffer
+
+"以下的两个功能需要在~/.vimrc中增加:
+"let g:miniBufExplMapCTabSwitchBufs = 1
+"<C-Tab>	向前循环切换到每个buffer上,并在但前窗口打开
+"<C-S-Tab>	向后循环切换到每个buffer上,并在但前窗口打开
+
+"如果在~/.vimrc中设置了下面这句:
+"let g:miniBufExplMapWindowNavVim = 1 则可以用<C-h,j,k,l>切换到上下左右的窗口中去,就像:
+"C-w,h j k l    向"左,下,上,右"切换窗口.
+
+"在~/.vimrc中设置:
+"let g:miniBufExplMapWindowNavArrows = 1 是用<C-箭头键>切换到上下左右窗口中去
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "		光标所在位置,F,查字典
@@ -221,6 +252,15 @@ if has("cscope")
 	nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 	nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR> 
 endif
+
+"0 或 s	查找本 C 符号(可以跳过注释)
+"1 或 g	查找本定义
+"2 或 d	查找本函数调用的函数
+"3 或 c	查找调用本函数的函数
+"4 或 t	查找本字符串
+"6 或 e	查找本 egrep 模式
+"7 或 f	查找本文件
+"8 或 i	查找包含本文件的文件
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "		使用S-r键自动添加打印信息到代码中
