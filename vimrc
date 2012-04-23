@@ -151,7 +151,7 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_File_Fold_Auto_Close = 0
 
 " 为1则使用TlistToggle打开标签列表窗口后会获焦点至于标签列表窗口；为0则taglist打开后焦点仍保持在代码窗口
-" let Tlist_GainFocus_On_ToggleOpen = 0
+let Tlist_GainFocus_On_ToggleOpen = 0
 
 " 显示标签列表窗口时允许/禁止扩展Vim窗口宽度
 let Tlist_Inc_Winwidth = 1
@@ -160,11 +160,23 @@ let Tlist_Inc_Winwidth = 1
 nmap <F3> :Tlist<ENTER>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"      Buffer设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+let g:bufExplorerSortBy='mru'        " Sort by most recently used.
+let g:bufExplorerSplitRight=0        " Split left.
+let g:bufExplorerSplitVertical=1     " Split vertically.
+let g:bufExplorerSplitVertSize = 30  " Split width
+let g:bufExplorerUseCurrentWindow=1  " Open in new window.
+map <C-F8> :BufExplorer<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "      winManager设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " http://www.vim.org/scripts/script.php?script_id=95
 " 设置界面分割
-let g:winManagerWindowLayout = "TagList|FileExplorer"
+let g:winManagerWindowLayout = "FileExplorer|TagList"
 
 " 设置winmanager的宽度，默认为25
 let g:winManagerWidth = 30
