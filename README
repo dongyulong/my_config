@@ -1,0 +1,11 @@
+How to use these files
+
+1.cp -fr vim ~/.vim
+2.cp -fr vimrc ~/.vimrc
+3.cp bashrc ~/.bashrc
+4.cp gitconfig ~/.gitconfig
+5.cp gitmsg.template ~/.ssh/.gitmsg.template
+6.sudo cp -fr dic/* /usr/share/stardict/dic/
+
+NOTE:
+if you just want to config vim , just do first two steps.
