@@ -254,6 +254,7 @@ if has("cscope")
 		cs add $CSCOPE_DB
 	endif
 	set csverb
+"	这一项是不能设置的，否则你的cscope搜索将无法打开搜索文件结果窗口，非常郁闷
 "	set cscopequickfix=s-,c-,d-,i-,t-,e-
 	nmap s :cs find s <C-R>=expand("<cword>")<CR><CR> 
 	nmap <C-]> :cs find g <C-R>=expand("<cword>")<CR><CR> 
